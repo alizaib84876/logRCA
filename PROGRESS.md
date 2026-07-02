@@ -19,11 +19,12 @@
 - [x] Verified the new Python files compile cleanly.
 - [x] Installed the minimum API dependencies (`fastapi`, `uvicorn`).
 - [x] Added GitHub/CI-CD delivery policy notes to the implementation plan.
+- [x] Added a minimal CI workflow and smoke test.
+- [x] Created the first Git commit for the scaffolded backend milestone.
 
 ## In Progress
 - [ ] Wire up the first executable FastAPI entrypoint.
-- [ ] Initialize Git for the repository and make the first professional commit.
-- [ ] Add the first lightweight CI workflow after the repo is initialized.
+- [ ] Prepare the first real ingestion slice for a sample log dataset.
 
 ## Validation Notes
 - `pytest` initially failed because the src layout was not on `sys.path` during test collection.
@@ -31,13 +32,13 @@
 ## Validation Notes
 - `python3 -m py_compile` passed for the new package files.
 - API dependencies were installed successfully in the configured Python environment.
+- `pytest` passed with the initial health-route smoke test.
 
 ## Blockers
 - None yet.
 
 ## Next Recommended Step
-- Initialize Git, make the first commit, then run the FastAPI health endpoint locally.
-- Keep the src layout visible to tests until the project is installed editable.
+- Start the first ingestion slice and keep building the local MVP incrementally.
 
 ## Suggested Milestone Sequence
 1. Create the Python environment and project skeleton.
