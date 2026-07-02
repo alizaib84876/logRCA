@@ -21,6 +21,7 @@
 - [x] Added GitHub/CI-CD delivery policy notes to the implementation plan.
 - [x] Added a minimal CI workflow and smoke test.
 - [x] Created the first Git commit for the scaffolded backend milestone.
+- [x] Connected the local repository to GitHub and pushed `main`.
 
 ## In Progress
 - [ ] Wire up the first executable FastAPI entrypoint.
@@ -56,3 +57,4 @@
 - 2026-07-02: Started with an empty workspace; added the implementation plan and live progress tracker.
 - 2026-07-02: Created the project scaffold and prepared the backend milestone.
 - 2026-07-02: Installed the API dependencies and documented GitHub/CI-CD workflow expectations.
+- 2026-07-02: Connected the GitHub remote and pushed the initial project state.
