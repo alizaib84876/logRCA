@@ -27,3 +27,9 @@ class FusedRetrievalResult:
     query: str
     hits: list[RetrievalHit]
 
+
+@dataclass(slots=True)
+class RerankedRetrievalResult:
+    query: str
+    hits: list[RetrievalHit]
+

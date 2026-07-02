@@ -34,6 +34,7 @@ pip install -e ".[api]"
 - First BM25 retrieval index over the processed HDFS_2k output is available locally
 - BM25 retrieval is exposed through a backend search endpoint
 - Fused BM25 retrieval is exposed through a backend search endpoint
+- Lightweight reranking is exposed through a backend search endpoint
 - CI workflow configured to run code-only tests on push and pull request
 - Dataset-backed ingestion tests are tagged as integration tests for later runs
 
@@ -41,4 +42,4 @@ The push workflow is intentionally kept dataset-free so it stays green on every 
 
 The backend now also exposes a BM25 retrieval endpoint for local incident-style search over the processed HDFS_2k output.
 
-The next planned milestone is to layer in stronger ranking and eventually dense retrieval on top of the fused sparse index.
+The next planned milestone is to introduce dense retrieval and then combine it with the sparse path.

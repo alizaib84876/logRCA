@@ -14,19 +14,23 @@ from logrca.retrieval.fusion import (
 	reciprocal_rank_fusion,
 	search_fused_bm25,
 )
-from logrca.retrieval.models import BM25Index, FusedRetrievalResult, RetrievalHit
+from logrca.retrieval.models import BM25Index, FusedRetrievalResult, RetrievalHit, RerankedRetrievalResult
+from logrca.retrieval.rerank import rerank_fused_result, rerank_hits
 
 __all__ = [
 	"BM25Index",
 	"BM25SearchResult",
 	"FusedBM25Bundle",
 	"FusedRetrievalResult",
+	"RerankedRetrievalResult",
 	"RetrievalHit",
 	"build_bm25_index",
 	"build_hdfs_2k_bm25_index",
 	"build_hdfs_2k_fused_bm25_bundle",
 	"load_hdfs_2k_processed_records",
 	"reciprocal_rank_fusion",
+	"rerank_fused_result",
+	"rerank_hits",
 	"search_fused_bm25",
 	"search_bm25",
 	"tokenize_text",
