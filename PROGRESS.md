@@ -31,6 +31,7 @@
 - [x] Persisted mined HDFS_2k outputs into the processed data folder and validated the export pipeline.
 - [x] Added an ingestion status helper and exposed it through the FastAPI backend.
 - [x] Added API coverage for the HDFS_2k ingestion status endpoint.
+- [x] Split the test suite into code-only CI tests and dataset-backed integration tests.
 
 ## In Progress
 - [ ] Wire up the first executable FastAPI entrypoint.
@@ -47,6 +48,8 @@
 - The Drain3-based template mining tests passed on the real HDFS_2k dataset.
 - The ingestion export pipeline test passed and wrote processed CSV outputs into a temporary folder.
 - The ingestion status endpoint test passed through the FastAPI app.
+- The non-integration CI slice passed locally with `pytest -m "not integration"`.
+- The integration slice passed locally with `pytest -m integration`.
 
 ## Blockers
 - None yet.

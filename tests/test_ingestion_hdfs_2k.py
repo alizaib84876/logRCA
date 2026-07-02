@@ -1,8 +1,11 @@
 from pathlib import Path
 
+import pytest
+
 from logrca.ingestion import load_hdfs_2k_dataset
 
 
+@pytest.mark.integration
 def test_hdfs_2k_dataset_loads() -> None:
     dataset = load_hdfs_2k_dataset(Path("data/raw/hdfs_2k"))
 

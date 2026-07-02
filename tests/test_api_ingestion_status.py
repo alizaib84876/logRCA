@@ -1,8 +1,10 @@
 from fastapi.testclient import TestClient
+import pytest
 
 from logrca.api.app import app
 
 
+@pytest.mark.integration
 def test_ingestion_status_endpoint_returns_dataset_info() -> None:
     client = TestClient(app)
 
