@@ -33,10 +33,11 @@
 - [x] Added API coverage for the HDFS_2k ingestion status endpoint.
 - [x] Split the test suite into code-only CI tests and dataset-backed integration tests.
 - [x] Fixed the CI failure by making the FastAPI app lazy-load ingestion and excluding dataset-backed tests from the push workflow.
+- [x] Built the first BM25 retrieval index over the processed HDFS_2k outputs and validated it locally.
 
 ## In Progress
 - [ ] Wire up the first executable FastAPI entrypoint.
-- [ ] Start the retrieval index layer using the processed HDFS_2k outputs.
+- [ ] Expose retrieval through the backend and add a lightweight retrieval endpoint.
 
 ## Validation Notes
 - `pytest` initially failed because the src layout was not on `sys.path` during test collection.
@@ -52,12 +53,13 @@
 - The non-integration CI slice passed locally with `pytest -m "not integration"`.
 - The integration slice passed locally with `pytest -m integration`.
 - The remaining API warning is non-blocking and does not fail the workflow.
+- The BM25 retrieval integration test passed against the processed HDFS_2k outputs.
 
 ## Blockers
 - None yet.
 
 ## Next Recommended Step
-- Start the retrieval index layer using the processed HDFS_2k outputs.
+- Expose retrieval through the backend and add a lightweight retrieval endpoint.
 
 ## Suggested Milestone Sequence
 1. Create the Python environment and project skeleton.
@@ -83,3 +85,4 @@
 - 2026-07-02: Added Drain3 template mining for HDFS_2k and validated it against the dataset.
 - 2026-07-02: Added persistence for the mined HDFS_2k output and verified the export pipeline.
 - 2026-07-02: Added an ingestion status endpoint and verified it through the FastAPI app.
+- 2026-07-02: Added the first BM25 retrieval index over the processed HDFS_2k outputs.

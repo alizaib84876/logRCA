@@ -31,9 +31,10 @@ pip install -e ".[api]"
 - Minimal FastAPI health endpoint available
 - Ingestion status endpoint available for the HDFS_2k dataset
 - HDFS_2k template mining and processed exports are wired into the ingestion pipeline
+- First BM25 retrieval index over the processed HDFS_2k output is available locally
 - CI workflow configured to run code-only tests on push and pull request
 - Dataset-backed ingestion tests are tagged as integration tests for later runs
 
 The push workflow is intentionally kept dataset-free so it stays green on every commit. Dataset-backed checks stay in the integration test lane until a separate data-aware workflow is added.
 
-The next planned milestone is to use the ingestion outputs as the basis for retrieval indexes and quality checks.
+The next planned milestone is to expose retrieval through the backend and then add ranking improvements on top of the sparse index.
