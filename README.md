@@ -17,10 +17,20 @@ Agentic retrieval-augmented generation for log-based incident root-cause analysi
 - UI: Streamlit
 
 ## Local development
-The first milestone is the project scaffold. The next step is to install the minimum backend dependencies and wire up a runnable API.
+This repository currently contains the initial project scaffold and the first runnable FastAPI slice.
 
-Install the API extras when you are ready:
+### Setup
+Install the API extras when you want to run the backend locally:
 
 ```bash
 pip install -e ".[api]"
 ```
+
+### Current status
+- Project scaffold completed
+- Minimal FastAPI health endpoint available
+- Ingestion status endpoint available for the HDFS_2k dataset
+- HDFS_2k template mining and processed exports are wired into the ingestion pipeline
+- CI workflow configured to run the smoke test on push and pull request
+
+The next planned milestone is to use the ingestion outputs as the basis for retrieval indexes and quality checks.
