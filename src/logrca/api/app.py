@@ -26,6 +26,28 @@ def create_app() -> FastAPI:
             "cluster_template_rows": status.cluster_template_rows,
         }
 
+    @app.get("/retrieval/bm25/search")
+    def bm25_search(q: str, top_k: int = 5) -> dict[str, object]:
+        from logrca.retrieval import build_hdfs_2k_bm25_index, search_bm25
+
+        index, bm25 = build_hdfs_2k_bm25_index()
+        result = search_bm25(index, bm25, q, top_k=top_k)
+        return {
+            "query": result.query,
+            "hits": [
+                {
+                    "record_id": hit.record_id,
+                    "score": hit.score,
+                    "text": hit.text,
+                    "source_file": hit.source_file,
+                    "cluster_id": hit.cluster_id,
+                    "event_id": hit.event_id,
+                    "metadata": hit.metadata,
+                }
+                for hit in result.hits
+            ],
+        }
+
     @app.get("/")
     def root() -> dict[str, str]:
         return {"message": "LogRCA API is running"}
