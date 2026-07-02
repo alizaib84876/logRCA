@@ -10,6 +10,8 @@
 - Project has been defined at a high level.
 - Initial project scaffold has been created.
 - Implementation will now move into the first runnable backend milestone.
+- Commit cadence should stay sparse and milestone-based.
+- Dataset downloads will be requested only when the ingestion phase starts.
 
 ## Completed
 - [x] Captured the project goal and core architecture in the implementation plan.
@@ -34,6 +36,7 @@
 - `python3 -m py_compile` passed for the new package files.
 - API dependencies were installed successfully in the configured Python environment.
 - `pytest` passed with the initial health-route smoke test.
+- GitHub Actions failed because the workflow did not install the dev/test dependency set; the workflow now uses `.[api,dev]`.
 
 ## Blockers
 - None yet.
@@ -58,3 +61,5 @@
 - 2026-07-02: Created the project scaffold and prepared the backend milestone.
 - 2026-07-02: Installed the API dependencies and documented GitHub/CI-CD workflow expectations.
 - 2026-07-02: Connected the GitHub remote and pushed the initial project state.
+- 2026-07-02: Updated the plan to avoid excessive commits and to request datasets only during the relevant phase.
+- 2026-07-02: Fixed the CI workflow so GitHub Actions installs both API and test dependencies.

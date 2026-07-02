@@ -18,7 +18,7 @@ jobs:
           python-version: "3.13"
 
       - name: Install project
-        run: pip install -e ".[api]"
+        run: pip install -e ".[api,dev]"
 
       - name: Run smoke test
         run: python -m pytest

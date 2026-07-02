@@ -14,7 +14,8 @@ Build an agentic RAG system for log-based incident root-cause analysis that can:
 - Install dependencies only when a phase needs them.
 - Prefer a local, Apple Silicon-friendly development path first.
 - Keep every milestone reproducible and documented in the progress file.
-- Make regular Git commits after useful milestones and keep the work tree clean.
+- Make Git commits only for meaningful milestones or larger verified changes.
+- Keep the work tree clean, but do not commit every tiny change.
 - Add CI/CD only when the project reaches the point where automated checks and deployment are meaningful.
 - Use a GitHub repository as the long-term source of truth once the initial scaffold is stable.
 
@@ -97,6 +98,11 @@ Build the system in 8 phases:
 - Parse logs into structured records.
 - Mine templates with Drain3.
 - Normalize dynamic fields such as timestamps, IDs, IPs, hashes, and numeric noise.
+
+### Data acquisition rule
+- If a dataset is needed, specify it here and only here.
+- Do not download datasets before this phase is active.
+- When this phase starts, provide the exact source, file name, and expected folder location so it can be pasted into the working directory.
 
 ### Tasks
 - Define a unified schema for logs and postmortems.
