@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logrca"
+version = "0.1.0"
+description = "Agentic RAG for log-based incident root-cause analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Alizaib" }]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi", "uvicorn"]
+ui = ["streamlit"]
+ingestion = ["drain3", "pandas"]
+retrieval = ["rank_bm25", "qdrant-client", "sentence-transformers"]
+orchestration = ["langgraph"]
+evaluation = ["ragas", "datasets"]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
