@@ -2,11 +2,11 @@ from pathlib import Path
 
 import pytest
 
-from logrca.ingestion import compare_with_dataset_templates, load_hdfs_2k_dataset, mine_hdfs_2k_dataset
-
 
 @pytest.mark.integration
 def test_hdfs_2k_template_mining_runs() -> None:
+    from logrca.ingestion import load_hdfs_2k_dataset, mine_hdfs_2k_dataset
+
     dataset = load_hdfs_2k_dataset(Path("data/raw/hdfs_2k"))
     result = mine_hdfs_2k_dataset(dataset)
 
@@ -17,6 +17,8 @@ def test_hdfs_2k_template_mining_runs() -> None:
 
 @pytest.mark.integration
 def test_hdfs_2k_dataset_templates_are_found() -> None:
+    from logrca.ingestion import compare_with_dataset_templates, load_hdfs_2k_dataset, mine_hdfs_2k_dataset
+
     dataset = load_hdfs_2k_dataset(Path("data/raw/hdfs_2k"))
     result = mine_hdfs_2k_dataset(dataset)
     comparison = compare_with_dataset_templates(result.mined_records, dataset.templates)

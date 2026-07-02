@@ -2,11 +2,11 @@ from pathlib import Path
 
 import pytest
 
-from logrca.ingestion import run_hdfs_2k_ingestion_pipeline
-
 
 @pytest.mark.integration
 def test_hdfs_2k_ingestion_pipeline_writes_processed_outputs(tmp_path: Path) -> None:
+    from logrca.ingestion import run_hdfs_2k_ingestion_pipeline
+
     export_paths = run_hdfs_2k_ingestion_pipeline(
         Path("data/raw/hdfs_2k"),
         base_dir=tmp_path,

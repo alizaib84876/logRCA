@@ -18,7 +18,7 @@ ingestion = ["drain3", "pandas"]
 retrieval = ["rank_bm25", "qdrant-client", "sentence-transformers"]
 orchestration = ["langgraph"]
 evaluation = ["ragas", "datasets"]
-dev = ["pytest", "ruff"]
+dev = ["pytest", "ruff", "httpx2"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}

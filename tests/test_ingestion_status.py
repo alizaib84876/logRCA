@@ -1,10 +1,10 @@
 import pytest
 
-from logrca.ingestion import build_hdfs_2k_ingestion_status
-
 
 @pytest.mark.integration
 def test_hdfs_2k_ingestion_status_reports_present_files() -> None:
+    from logrca.ingestion import build_hdfs_2k_ingestion_status
+
     status = build_hdfs_2k_ingestion_status()
 
     assert status.dataset_name == "HDFS_2k"

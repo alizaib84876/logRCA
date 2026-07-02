@@ -1,7 +1,5 @@
 from fastapi import FastAPI
 
-from logrca.ingestion import build_hdfs_2k_ingestion_status
-
 
 def create_app() -> FastAPI:
     app = FastAPI(title="LogRCA", version="0.1.0")
@@ -12,6 +10,8 @@ def create_app() -> FastAPI:
 
     @app.get("/ingestion/hdfs-2k/status")
     def hdfs_2k_status() -> dict[str, int | str | bool]:
+        from logrca.ingestion import build_hdfs_2k_ingestion_status
+
         status = build_hdfs_2k_ingestion_status()
         return {
             "dataset_name": status.dataset_name,

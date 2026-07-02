@@ -1,11 +1,12 @@
-from fastapi.testclient import TestClient
 import pytest
-
-from logrca.api.app import app
 
 
 @pytest.mark.integration
 def test_ingestion_status_endpoint_returns_dataset_info() -> None:
+    from fastapi.testclient import TestClient
+
+    from logrca.api.app import app
+
     client = TestClient(app)
 
     response = client.get("/ingestion/hdfs-2k/status")

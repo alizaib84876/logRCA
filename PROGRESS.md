@@ -32,6 +32,7 @@
 - [x] Added an ingestion status helper and exposed it through the FastAPI backend.
 - [x] Added API coverage for the HDFS_2k ingestion status endpoint.
 - [x] Split the test suite into code-only CI tests and dataset-backed integration tests.
+- [x] Fixed the CI failure by making the FastAPI app lazy-load ingestion and excluding dataset-backed tests from the push workflow.
 
 ## In Progress
 - [ ] Wire up the first executable FastAPI entrypoint.
@@ -50,6 +51,7 @@
 - The ingestion status endpoint test passed through the FastAPI app.
 - The non-integration CI slice passed locally with `pytest -m "not integration"`.
 - The integration slice passed locally with `pytest -m integration`.
+- The remaining API warning is non-blocking and does not fail the workflow.
 
 ## Blockers
 - None yet.

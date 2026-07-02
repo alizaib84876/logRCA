@@ -34,4 +34,6 @@ pip install -e ".[api]"
 - CI workflow configured to run code-only tests on push and pull request
 - Dataset-backed ingestion tests are tagged as integration tests for later runs
 
+The push workflow is intentionally kept dataset-free so it stays green on every commit. Dataset-backed checks stay in the integration test lane until a separate data-aware workflow is added.
+
 The next planned milestone is to use the ingestion outputs as the basis for retrieval indexes and quality checks.
