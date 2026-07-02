@@ -35,10 +35,12 @@
 - [x] Fixed the CI failure by making the FastAPI app lazy-load ingestion and excluding dataset-backed tests from the push workflow.
 - [x] Built the first BM25 retrieval index over the processed HDFS_2k outputs and validated it locally.
 - [x] Exposed BM25 retrieval through a backend search endpoint and validated it locally.
+- [x] Added a first fused sparse retrieval layer over raw and template BM25 views.
+- [x] Added a dedicated handoff file for clean resumption in future sessions.
 
 ## In Progress
 - [ ] Wire up the first executable FastAPI entrypoint.
-- [ ] Add ranking fusion and improve the retrieval results.
+- [ ] Improve ranking quality further and prepare for dense retrieval.
 
 ## Validation Notes
 - `pytest` initially failed because the src layout was not on `sys.path` during test collection.
@@ -57,12 +59,13 @@
 - The BM25 retrieval integration test passed against the processed HDFS_2k outputs.
 - The BM25 backend search endpoint passed a local integration test.
 - The push-safe CI slice still passes after exposing retrieval through the backend.
+- The fused BM25 retrieval integration test passed locally.
 
 ## Blockers
 - None yet.
 
 ## Next Recommended Step
-- Add ranking fusion and improve the retrieval results.
+- Improve ranking quality further and prepare for dense retrieval.
 
 ## Suggested Milestone Sequence
 1. Create the Python environment and project skeleton.
@@ -90,3 +93,5 @@
 - 2026-07-02: Added an ingestion status endpoint and verified it through the FastAPI app.
 - 2026-07-02: Added the first BM25 retrieval index over the processed HDFS_2k outputs.
 - 2026-07-02: Exposed BM25 retrieval through a backend endpoint.
+- 2026-07-02: Added a fused sparse retrieval layer over raw-message and template BM25 views.
+- 2026-07-02: Added a dedicated handoff file for future session continuity.

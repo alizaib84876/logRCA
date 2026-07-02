@@ -20,3 +20,10 @@ class BM25Index:
     corpus: list[str]
     tokenized_corpus: list[list[str]]
     records: list[RetrievalHit]
+
+
+@dataclass(slots=True)
+class FusedRetrievalResult:
+    query: str
+    hits: list[RetrievalHit]
+

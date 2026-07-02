@@ -48,6 +48,28 @@ def create_app() -> FastAPI:
             ],
         }
 
+    @app.get("/retrieval/fused/search")
+    def fused_search(q: str, top_k: int = 5) -> dict[str, object]:
+        from logrca.retrieval import build_hdfs_2k_fused_bm25_bundle, search_fused_bm25
+
+        bundle = build_hdfs_2k_fused_bm25_bundle()
+        result = search_fused_bm25(bundle, q, top_k=top_k)
+        return {
+            "query": result.query,
+            "hits": [
+                {
+                    "record_id": hit.record_id,
+                    "score": hit.score,
+                    "text": hit.text,
+                    "source_file": hit.source_file,
+                    "cluster_id": hit.cluster_id,
+                    "event_id": hit.event_id,
+                    "metadata": hit.metadata,
+                }
+                for hit in result.hits
+            ],
+        }
+
     @app.get("/")
     def root() -> dict[str, str]:
         return {"message": "LogRCA API is running"}
